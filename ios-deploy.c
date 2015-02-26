@@ -834,6 +834,7 @@ server_callback (CFSocketRef s, CFSocketCallBackType callbackType, CFDataRef add
             kill_ptree(child, SIGHUP);
         }
         //exit(exitcode_error);  //Exit code is always 253 because of this.
+        exit(0)
         return;
     }
     res = write (CFSocketGetNative (lldb_socket), CFDataGetBytePtr (data), CFDataGetLength (data));
